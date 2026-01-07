@@ -25,7 +25,7 @@ async function fetchPostsWithComments() {
         title: post.title,
         commentCount: commentCount[post.id] || 0,
         firstCommenterEmail: comments[post.id].email
-    }))
+    })).filter(res => res.commentCount>0)
 
     return result;
 
